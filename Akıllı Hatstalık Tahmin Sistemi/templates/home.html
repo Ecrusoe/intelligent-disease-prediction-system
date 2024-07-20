@@ -1,0 +1,152 @@
+{% extends 'main.html' %}
+{% block content %}
+{% if message %}
+    <div class="alert alert-danger">{{ message }}</div>
+{% endif %}
+<style>
+body {
+    font-family: Cambria;
+    height: 100%;
+    background-color: #9EC7D9;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+h1 {
+  text-align: center;
+}
+</style>
+<div class="container">
+    <div class="card card-body" style="box-shadow: 0 0 10px black; background-color: #F0F1F4">
+        <h1>Akıllı Hastalık Tahmin Sistemi</h1>
+        <br>
+        <h2>Model Doğrulukları:</h2>
+        <ul>
+            <li>Diyabet Modeli: <strong>92.54%</strong></li>
+            <li>Kalp Hastalığı Modeli: <strong>98.70%</strong></li>
+            <li>Göğüs Kanseri Modeli: <strong>97.66%</strong></li>
+            <li>Böbrek Hastalığı Modeli: <strong>99.16%</strong></li>
+            <li>Karaciğer Hastalığı Modeli: <strong>71.18%</strong></li>
+            <li>Sıtma Modeli: <strong>95.65%</strong></li>
+            <li>Zatürre Modeli: <strong>91.35%</strong></li>
+        </ul>
+        <br>
+        <h3>Hastalıklar hakkında bilgi:</h3>
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px; background-color: #9EC7D9">
+                <h4>Diyabet</h4>
+                <p>Diabetes mellitus, vücudunuzun kan şekerini (glukoz) nasıl kullandığını etkileyen bir grup hastalığı ifade eder. Glikoz sağlığınız için hayati önem taşır çünkü kaslarınızı ve dokularınızı oluşturan hücreler için önemli bir enerji kaynağıdır. Aynı zamanda beyninizin ana yakıt kaynağıdır. Diyabetin altında yatan neden türüne göre değişir. Ancak, hangi tür diyabetiniz olursa olsun, kanınızda aşırı şekere yol açabilir. Kanınızda çok fazla şeker bulunması ciddi sağlık sorunlarına yol açabilir.</p>
+                <h5>Semptomlar</h5>
+                <ul>
+                    <li>Artan susuzluk</li>
+                    <li>Sık idrara çıkma</li>
+                    <li>Aşırı açlık</li>
+                    <li>Açıklanamayan kilo kaybı</li>
+                    <li>Bulanık görme</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px; background-color: #9EC7D9">
+                <h4>Kalp / Kardiyovasküler Hastalık</h4>
+                <p>Kardiyovasküler hastalık (kalp hastalığı), vücudunuzun kalp ve kan damarlarını etkileyen bir grup hastalığı ifade eder. Bu hastalıklar kalbinizin ve/veya kan damarlarınızın bir veya birçok bölümünü etkileyebilir. Bir kişi semptomatik (hastalığı fiziksel olarak deneyimleyen) veya asemptomatik (hiçbir şey hissetmeyen) olabilir.</p>
+                <h5>Semptomlar</h5>
+                <ul>
+                    <li>Kalbin çarpması veya hızlanması (çarpıntı)</li>
+                    <li>Göğüs ağrısı</li>
+                    <li>Terleme</li>
+                    <li>Baş dönmesi</li>
+                    <li>Nefes darlığı</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px; background-color: #9EC7D9">
+                <h4>Göğüs kanseri </h4>
+                <p>Meme kanseri memede başlayan bir kanser türüdür. Bir veya her iki memede başlayabilir. Meme kanseri, cilt kanserinden sonra Amerika Birleşik Devletleri'nde kadınlarda teşhis edilen en yaygın kanserdir. Meme kanseri hem erkeklerde hem de kadınlarda görülebilir, ancak kadınlarda çok daha yaygındır.</p>
+                <h5>Semptomlar</h5>
+                <ul>
+                    <li>Göğüste veya koltuk altında yeni bir yumru</li>
+                    <li>Göğüste bir bölümünde kalınlaşma veya şişme.</li>
+                    <li>Göğüs derisinde tahriş veya çukurlaşma</li>
+                    <li>Göğüs başı bölgesinde veya memede kızarıklık veya pul pul deri</li>
+                    <li>Göğüs ucunun içeri çekilmesi veya Göğüs ucu bölgesinde ağrı</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px; background-color: #9EC7D9">
+                <h4>Kronik Böbrek Hastalığı</h4>
+                <p>Kronik böbrek hastalığı (KBH) böbreklerinizin hasar gördüğü ve kanı olması gerektiği gibi süzemediği anlamına gelir. Hastalığa "kronik" denmesinin nedeni, böbreklerinizdeki hasarın uzun bir süre boyunca yavaş yavaş meydana gelmesidir. Bu hasar vücudunuzda atıkların birikmesine neden olabilir. KBH başka sağlık sorunlarına da neden olabilir.</p>
+                <h5>Semptomlar</h5>
+                <ul>
+                    <li>Mide bulantısı</li>
+                    <li>Kusma</li>
+                    <li>Yorgunluk ve halsizlik</li>
+                    <li>Kas seğirmeleri ve kramplar</li>
+                    <li>İştah kaybı</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px; background-color: #9EC7D9">
+                <h4>Karaciğer Hastalığı</h4>
+                <p>"Karaciğer hastalığı" terimi, karaciğerinizi etkileyebilen ve zarar verebilen çeşitli durumlardan herhangi birini ifade eder. Karaciğer hastalığı zamanla siroza (yara izi) neden olabilir. Sağlıklı karaciğer dokusunun yerini daha fazla yara dokusu aldıkça, karaciğer artık düzgün çalışamaz. Karaciğer hastalığı tedavi edilmezse karaciğer yetmezliğine ve karaciğer kanserine yol açabilir.</p>
+                <h5>Semptomlar</h5>
+                <ul>
+                    <li>Karın (göbek) ağrısı (özellikle sağ tarafta)</li>
+                    <li>Kolay morarma</li>
+                    <li>İdrarınızın veya dışkınızın renginde değişiklikler</li>
+                    <li>Yorgunluk</li>
+                    <li>Mide bulantısı veya kusma</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px; background-color: #9EC7D9">
+                <h4>Sıtma</h4>
+                <p>Sıtma, küçük parazitlerle enfekte olmuş bir sivrisinek tarafından ısırıldığınızda yayılan ciddi bir hastalıktır. Sivrisinek ısırdığında sıtma parazitlerini kan dolaşımınıza enjekte eder. Sıtmaya bir virüs ya da bir bakteri türü değil, parazitler neden olur. Sıtma tedavi edilmezse nöbetler, beyin hasarı, solunum güçlüğü, organ yetmezliği ve ölüm gibi ciddi sağlık sorunlarına neden olabilir.</p>
+                <h5>Semptomlar</h5>
+                <ul>
+                    <li>Ateş ve terleme</li>
+                    <li>Tüm vücudunuzu sarsan titreme</li>
+                    <li>Baş ağrısı ve kas ağrıları</li>
+                    <li>Yorgunluk</li>
+                    <li>İshal, bulantı ve kusma</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px; background-color: #9EC7D9">
+                <h4>Zatürre</h4>
+                <p>Zatürre, akciğerlerinizden birinde veya her ikisinde bakteri, virüs veya mantarların neden olduğu bir enfeksiyondur. Akciğerlerde bir enfeksiyon olduğunda, aşağıdakiler de dahil olmak üzere çeşitli şeyler olur:</p>
+                <ul>
+                    <li>Solunum yollarınız şişer (iltihaplanır)</li>
+                    <li>Akciğerlerdeki hava kesecikleri mukus ve diğer sıvılarla dolar</li>
+                </ul>
+                <h5>Semptomlar</h5>
+                <ul>
+                    <li>Yüksek ateş (105° F'ye kadar)</li>
+                    <li>Yorgunluk (bitkinlik)</li>
+                    <li>Mukuslu öksürük (yeşilimsi renkte olabilir veya az miktarda kan içerebilir)</li>
+                    <li>Kas ağrısı</li>
+                    <li>Boğaz ağrısı</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

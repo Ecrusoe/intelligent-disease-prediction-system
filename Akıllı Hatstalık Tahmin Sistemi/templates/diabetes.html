@@ -1,0 +1,55 @@
+{% extends 'main.html' %}
+{% block content %}
+<style>
+body {
+    font-family: Cambria;
+    height: 100%;
+   background-color: #9EC7D9;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+input{
+    background-color: #eee;
+    border: none;
+
+}
+</style>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <center><h1 style="color:white;">Diyabet Belirleyicisi </h1></center>
+        <div class="card card-body" style=" background-color: #F0F1F4">
+            <form class="form-horizontal" action="{{ url_for('predictPage') }}" method="POST">
+                <div class="form-group">
+                    <input  class="form-control" type="text" name="Pregnancies" placeholder="Geçirdiği hamilelik sayısı">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="Glucose" placeholder="Glikoz">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="BloodPressure" placeholder="Tansiyon(Kan Basıncı) (mmHg)">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="SkinThickness" placeholder="Deri Kalınlığı  (mm)">
+                </div>
+                <div class="form-group">
+                    <input  class="form-control" type="text" name="Insulin" placeholder="İnsülin (in µU/ml)">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="BMI" placeholder="Vücut Kitle Endeksi(BMI)">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="DiabetesPedigreeFunction" placeholder="Diyabet Pedigri Fonksiyonu">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="Age" placeholder="Yaş (Yıl Olarak)">
+                </div>
+
+                <input style="background-color: #6EA8C1" type="submit" class="btn btn-info btn-block" value="TAHMİN ET">
+            </form>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+{% endblock %}

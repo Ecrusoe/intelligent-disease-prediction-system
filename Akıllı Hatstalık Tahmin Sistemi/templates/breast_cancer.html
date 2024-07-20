@@ -1,0 +1,175 @@
+{% extends 'main.html' %}
+{% block content %}
+<style>
+body {
+    font-family: Cambria;
+    height: 100%;
+    background-color: #9EC7D9;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+input{
+    background-color: #eee;
+    border: none;
+
+}
+
+
+
+
+
+
+
+
+</style>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <center><h1 style="color:white;">Göğüs Kanseri Belirkeyicisi</h1></center>
+        <div class="card card-body" style=" background-color: #F0F1F4">
+            <form class="form-horizontal" action="{{ url_for('predictPage') }}" method="POST">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="texture_mean" placeholder="Doku Ortalaması">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="smoothness_mean" placeholder="Pürüszülük Ortalaması">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="compactness_mean" placeholder="Kompaktlık Ortalaması">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input  class="form-control" type="text" name="concave points_mean" placeholder="İçbükey Noktalar Ort.">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="symmetry_mean" placeholder="Simetri Ort.">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="fractal_dimension_mean" placeholder="Fraktal Boyut Ort.">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="texture_se" placeholder="Doku Standart Hatası">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="area_se" placeholder="Alan Standart Hatası">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="smoothness_se" placeholder="Pürüzsüzlük Standart Hatası">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="compactness_se" placeholder="Kompaktlık Standart Hatası">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input  class="form-control" type="text" name="concavity_se" placeholder="İçbükeylik Standart Hatası">
+                    </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="concave points_se" placeholder="İçbükey Noktalar Standart Hatası">
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="symmetry_se" placeholder="Simetri Standart Hatası">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input  class="form-control" type="text" name="fractal_dimension_se" placeholder="Fraktal Boyut Standart Hatası">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="texture_worst" placeholder="En Kötü Doku">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input  class="form-control" type="text" name="area_worst" placeholder="En Kötü Bölge">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input  class="form-control" type="text" name="smoothness_worst" placeholder="En Kötü Pürüzsüzlü">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="compactness_worst" placeholder="En Kötü Kompaktlık">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input  class="form-control" type="text" name="concavity_worst" placeholder="En Kötü İçbükeylik">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="concave points_worst" placeholder="En Kötü İçbükey Noktalar">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="symmetry_worst" placeholder="En Kötü Simetri ">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="fractal_dimension_worst" placeholder="En Kötü Fraktal Boyut">
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+
+                <input style="background-color: #6EA8C1" type="submit" class="btn btn-info btn-block" value="TAHMİN ET">
+            </form>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+{% endblock %}

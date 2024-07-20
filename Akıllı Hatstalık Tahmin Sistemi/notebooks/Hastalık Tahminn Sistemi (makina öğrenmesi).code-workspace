@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../Hastalık Tahminn Sistemi (makina öğrenmesi)"
+		},
+		{
+			"path": "../tasarım_çalışması_1_dosyalar/TasarımÇalışması1"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Hastalık Tahminn Sistemi (makina öğrenmesi)"
+	}
+}

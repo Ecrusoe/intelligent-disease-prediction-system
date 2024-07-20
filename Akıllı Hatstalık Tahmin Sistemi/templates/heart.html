@@ -1,0 +1,109 @@
+{% extends 'main.html' %}
+{% block content %}
+<style>
+body {
+    font-family: Cambria;
+    height: 100%;
+    background-color: #9EC7D9;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+input{
+    background-color: #eee;
+    border: none;
+
+}
+</style>
+<div class="row" style="margin-bottom: 72px;">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <center><h1 style="color:white;">Kalp Hastalığı Belirleyicisi</h1></center>
+        <div class="card card-body" style=" background-color: #F0F1F4">
+            <form class="form-horizontal" action="{{ url_for('predictPage') }}" method="POST">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="age" placeholder="Yaş">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="sex" placeholder="Cinsiyet(1=Erkek ; 0 =Kadın)">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="cp" placeholder="Göğüs Ağrısı Tipi"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input  class="form-control" type="text" name="trestbps" placeholder="İstirahat Kan Basıncı (mm Hg cinsinden)">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="chol" placeholder="Serum Kolesterol (mg/dl cinsinden)">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input  class="form-control" type="text" name="fbs" placeholder="Açlık Kan Şekeri > 120 mg/dl (1 = Doğru; 0 = Yanlış)">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input  class="form-control" type="text" name="restecg" placeholder="İstirahat Elektrokardiyografisi Sonuçları">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input  class="form-control" type="text" name="thalach" placeholder="Ulaşılan Maksimum Kalp Atış Hızı">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input  class="form-control" type="text" name="exang" placeholder="Egzersize Bağlı Anjina (1 = Evet; 0 = Hayır)">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="oldpeak" placeholder="Dinlenmeye Göre Egzersizin Neden Olduğu ST Depresyonu">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="slope" placeholder="En Yüksek Egzersiz ST Segmentinin Eğimi">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="ca" placeholder="Floroskopi ile Renklendirilen Ana Damar Sayısı (0-3)">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="thal" placeholder="Thal: 1 = Normal; 2 = Sabit Kusur; 3 = Tersine Çevrilebilir Kusur">
+                        </div>
+                    </div>
+                </div>
+                <input style="background-color: #6EA8C1" type="submit" class="btn btn-info btn-block" value="TAHMİN ET">
+            </form>
+        </div>
+    </div>
+<!--    <div class="col-md-2"></div>-->
+</div>
+{% endblock %}

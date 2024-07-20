@@ -1,0 +1,166 @@
+{% extends 'main.html' %}
+{% block content %}
+<style>
+body {
+    font-family: Cambria;
+    height: 100%;
+    background-color: #9EC7D9;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+input{
+    background-color: #eee;
+    border: none;
+
+}
+</style>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <center><h1 style="color:white;">Böbrek Hastalığı Belirleyicisi</h1></center>
+        <div class="card card-body" style=" background-color: #F0F1F4">
+            <form class="form-horizontal" action="{{ url_for('predictPage') }}" method="POST">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="age" placeholder="Yaş">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input  class="form-control" type="text" name="blood_pressure" placeholder="Kan Basıncı (mm/Hg cinsinden)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input  class="form-control" type="text" name="specific_gravity" placeholder="Özgül Ağırlık">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="albumin" placeholder="Albümin (0, 1, 2, 3, 4, 5)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="sugar" placeholder="Şeker (0, 1, 2, 3, 4, 5)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="red_blood_cells" placeholder="Kırmızı Kan Hücreleri (0: Anormal; 1: Normal)">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="pus_cell" placeholder="İrin Hücresi (0: Anormal; 1: Normal)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="pus_cell_clumps" placeholder="İrin Hücresi Kümeleri (0: Mevcut Değil; 1: Mevcut)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input  class="form-control" type="text" name="bacteria" placeholder="Bakteriler (0: Mevcut Değil; 1: Mevcut)">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="blood_glucose_random" placeholder="Kan Glikozu Rastgele (mgs/dl cinsinden)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="blood_urea" placeholder="Kan Üre (mgs/dl cinsinden)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="serum_creatinine" placeholder="Serum Kreatinin (mgs/dl cinsinden)">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="sodium" placeholder="Sodyum (mEq/L cinsinden)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input  class="form-control" type="text" name="potassium" placeholder="Potasyum (mEq/L cinsinden)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="haemoglobin" placeholder="Hemoglobin (gms cinsinden)">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input  class="form-control" type="text" name="packed_cell_volume" placeholder="Dolu Hücre Hacmi">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="white_blood_cell_count" placeholder="Beyaz Kan Hücresi Sayısı (hücre/cumm cinsinden)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input  class="form-control" type="text" name="red_blood_cell_count" placeholder="Kırmızı Kan Hücresi Sayısı (milyon/cmm olarak)">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input  class="form-control" type="text" name="hypertension" placeholder="Hipertansiyon (0: Hayır; 1: Evet)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="diabetes_mellitus" placeholder="Diyabet (0: Hayır; 1: Evet)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="coronary_artery_disease" placeholder="Koroner Arter Hastalığı (0: Hayır; 1: Evet)">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input  class="form-control" type="text" name="appetite" placeholder="İştah (0: İyi; 1: Kötü)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input  class="form-control" type="text" name="peda_edema" placeholder="Pedal Ödemi (0: Hayır; 1: Evet)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input   class="form-control" type="text" name="aanemia" placeholder="Anemi (0: Hayır; 1: Evet)">
+                        </div>
+                    </div>
+                </div>
+                <input style="background-color: #6EA8C1" type="submit" class="btn btn-info btn-block" value="TAHMİN ET">
+            </form>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+{% endblock %}
